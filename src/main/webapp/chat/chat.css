@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+#titulo {
+	float: right;
+	color: #DB0;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+	border-top: 2px solid #800;
+	border-bottom: 2px solid #800;
+	text-align: right;
+    max-width: 50%;
+}
+
+#titulo h1 {
+	line-height: 0.6em;
+	margin: 10px;
+}
+
+#subtitulo {
+	font-size: 0.4em;
+	color: #800;
+}
+
+hr {
+	color: #800;
+}
+
+
+#texto {
+	width: 95%;
+}
+
+.info, .error {
+	border-radius:10px;
+	color:#FFF;
+	padding: 3px;
+}
+
+.info {
+	border:1px solid #3C0;
+	background-color:#0C0;
+}
+
+.error {
+	border:1px solid #F99;
+	background-color:#F00;
+}
+
+#resultadoEnvio {
+	float: right;
+	text-align:center;
+	clear: both;
+	visibility: hidden;
+	font-size: 0.6em;
+	padding: 2px !important;
+}
+
+#cargando {
+	visibility: hidden;
+}
+
+#datos {
+	border: 1px solid #800;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.idcomentario {
+	font-size: 0.75em;
+	font-weight: bold;
+	padding-top: 10px;
+	float: left;
+	color: #800;
+}
+
+.autor {
+	font-size: 0.75em;
+	font-style: italic;
+	font-weight: bold;
+	padding: 10px;
+	float: left;
+	color: #970
+}
+
+.fecha {
+	float: right;
+	font-size: 0.5em;
+	font-style: oblique;
+}
+
+.comentario {
+	display: block;
+	clear: both;
+	padding-left: 40px;
+}
+
+.divComentario {
+	border-radius:5px;
+	border: 2px dotted #800;
+	margin: 10px !important;
+	
+}
+
+#cuerpo {
+	clear: both;
+}
+
+#cuerpo h3 {
+	margin: 0 10px;
+}
+
+#ayuda {
+	display: none;
+	border: 1px solid #800;
+	border-radius: 10px;
+	padding: 10px;
+}

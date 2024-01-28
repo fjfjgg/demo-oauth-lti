@@ -1,0 +1,45 @@
+{
+  "url": "http://<server>/demo-oauth-lti/token",
+  "requestMethod": "POST",
+  "headers": [
+    {
+      "key": "Authorization",
+      "value": "Basic Y2xpZW50dGVzdDp0ZXN0Y2xpZW50",
+      "literal": true
+    }
+    ],
+  "contentType": "application/x-www-form-urlencoded;charset=utf-8",
+  "parameters": [
+    {
+      "key": "grant_type",
+      "value": "client_credentials",
+      "literal": true
+    },
+    {
+      "key": "user",
+      "value": "${0}",
+      "literal": false
+    },
+    {
+      "key": "role",
+      "value": "${4}",
+      "literal": false
+    },
+    {
+      "key": "launch_id",
+      "value": "${5}",
+      "literal": false
+    }
+  ],
+  "fileParameter": null,
+  "requestBody": null,
+  "jsonResponse": true,
+  "responseTemplate": [
+    "{ \"url\": \"http://<server>/demo-oauth-lti/access\", ",
+    "  \"base\": \"http://<server>/demo-oauth-lti/\",     ",
+    "  \"oauth2\": ${body}, \"content\": \"\", \"redirect\": true}"
+    ],
+  "scoreTemplate": null,
+  "defaultScoreOnSuccess": 100,
+  "defaultScoreOnError": 111
+}

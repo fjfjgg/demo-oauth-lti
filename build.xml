@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="demo-oauth-lti">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../opt/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="11"/>
+    <property name="source" value="11"/>
+    <path id="Web App Libraries.libraryclasspath"/>
+    <path id="EAR Libraries.libraryclasspath"/>
+    <path id="Server Runtime [Apache Tomcat v10.1].libraryclasspath">
+        <pathelement location="../../apache-tomcat-10.1.10/lib/catalina-ant.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/catalina-storeconfig.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/el-api.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/websocket-api.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-coyote.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/jakartaee-migration-1.0.7-shaded.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-util.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/jasper-el.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/jsp-api.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-i18n-ko.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/websocket-client-api.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-i18n-pt-BR.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/annotations-api.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-jdbc.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-util-scan.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/catalina.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-i18n-ru.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-i18n-de.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/catalina-tribes.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-jni.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-i18n-cs.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/ecj-4.27.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-i18n-zh-CN.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/catalina-ha.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/servlet-api.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/jaspic-api.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-api.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/jasper.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/catalina-ssi.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-websocket.jar"/>
+        <pathelement location="../../apache-tomcat-10.1.10/lib/tomcat-i18n-ja.jar"/>
+    </path>
+    <path id="demo-oauth-lti.classpath">
+        <pathelement location="build/classes"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+        <path refid="Server Runtime [Apache Tomcat v10.1].libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="build/classes"/>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="src/main/java">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="build/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/main/java"/>
+            <classpath refid="demo-oauth-lti.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+  	<target name="war" description="Bundles the application as a WAR file" depends="clean, build">
+  	    <mkdir dir="target/demo-oauth-lti/WEB-INF/classes"/>
+  	     
+  	    <copy includeemptydirs="false" todir="target/demo-oauth-lti/WEB-INF/classes">
+  	            <fileset dir="build/classes">
+  	            <include name="**/*.class"/>
+  	            </fileset>
+  	    </copy>
+  		<copy includeemptydirs="false" todir="target/demo-oauth-lti/">
+  	            <fileset dir="src/main/webapp">
+  	            <include name="**/*"/>
+  	            </fileset>
+  	    </copy>
+  	     
+  	    <war destfile="target/demo-oauth-lti.war"
+  	        basedir="target/demo-oauth-lti"
+  	        needxmlfile="false">
+  	    </war>
+  	</target>
+</project>

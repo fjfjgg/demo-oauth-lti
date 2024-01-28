@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/*FJFJ*/
+body, div {
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin: 0px;
+	padding: 5px 20px;
+	color: rgb(34, 34, 34);
+	font-size: 15px;
+	font-family: 'Lucida Sans Unicode', 'Lucida Sans', AppleSDGothicNeo-Medium,
+		'Segoe UI', 'Malgun Gothic', Verdana, Tahoma, sans-serif;
+	background-color: rgb(255, 255, 255);
+}
+h1 {
+	clear: both;
+	font-size: 2.2em;
+	font-weight: bold;
+	margin: 1em 0px 1em;
+}
+p {
+	margin: 1em 0px;
+	word-wrap: break-word;
+}
+h2 {
+	clear: both;
+	font-size: 1.8em;
+	font-weight: bold;
+	margin: 1.275em 0px 0.85em;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: rgb(230, 230, 230);
+	line-height: 1.7em;
+}
+ul {
+	padding-left: 10px;
+}
+ul li {
+	display: list-item;
+	line-height: 1.4em;
+}
+pre {
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	word-break: break-all;
+	word-wrap: break-word;
+	overflow: auto;
+}
+pre code {
+	display: block;
+	white-space: pre;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	word-break: break-all;
+	word-wrap: break-word;
+	border: 1px solid rgb(204, 204, 204);
+	margin: 0px 2px;
+	font-size: 1em;
+	font-family: Consolas, Inconsolata, Courier, monospace;
+	letter-spacing: -1px;
+	font-weight: bold;
+	padding: 0.5em;
+	background-color: rgb(240, 240, 240);
+	background-position: initial initial;
+	background-repeat: initial initial;
+	color: black;
+}
+.highlight {
+	color: black;
+	padding: 0px 5px;
+	background-color: rgb(253, 255, 182);
+	box-shadow: rgb(253, 255, 182) 0px 0px 5px;
+}
+.underline {
+	font-style: normal;
+	text-decoration: underline;
+}
+ol {
+	list-style-type: decimal;
+}
+ol li {
+	display: list-item;
+	line-height: 1.4em;
+}
+p code {
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	word-break: break-all;
+	word-wrap: break-word;
+	border: 1px solid rgb(204, 204, 204);
+	padding: 0px 5px;
+	margin: 0px 2px;
+	font-family: Consolas, Inconsolata, Courier, monospace;
+	color: rgb(189, 0, 106);
+}
+table,tr,th,td {
+	border-collapse: collapse;
+	border: 1px solid grey;
+}
