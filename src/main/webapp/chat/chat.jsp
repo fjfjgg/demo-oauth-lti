@@ -6,9 +6,9 @@
 <!--/*FJFJ*/-->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Mensajes</title>
-<link href="estilo.css" rel="stylesheet" type="text/css"/>
-<link href="chat.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" charset="UTF-8" src="chat.js"></script>
+<link href="<%=response.encodeURL("estilo.css") %>" rel="stylesheet" type="text/css"/>
+<link href="<%=response.encodeURL("chat.css") %>" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" charset="UTF-8" src="<%=response.encodeURL("chat.js") %>"></script>
 </head>
 <body>
 	<div id="titulo">

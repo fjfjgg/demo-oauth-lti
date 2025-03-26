@@ -162,6 +162,12 @@ public class CheckAccessToken extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//Si existe una sesión la cerramos y creamos otra
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			session.invalidate();
+			session = request.getSession();
+		}
 		if (request.getHeader("Authorization") != null && checkToken(request, request.getHeader("Authorization"))) {
 			String origin = request.getHeader("Origin");
 			if ( origin != null) {
@@ -181,6 +187,18 @@ public class CheckAccessToken extends HttpServlet {
 			If you are not redirected automatically, follow the <a href='redirectUri'>link to web</a>
 			*/
 			response.setContentType("application/json;charset=UTF-8");
+			
+			//Requisito de cookie JSESSIONI
+			// - Debe tener SameSite=none
+			// - Debe tener Secure: https://web.dev/articles/samesite-cookies-explained?hl=es
+			// - Debe tener Partitioned: https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/Privacy_sandbox/Partitioned_cookies
+			
+			//Para poner Secure: https://geekflare.com/cybersecurity/secure-cookie-flag-in-tomcat/
+			//Para poner SameSite=none: https://tomcat.apache.org/tomcat-10.1-doc/config/cookie-processor.html
+			//Para Partitioned: Cookie.setAttribute
+			
+			//Otra opción es configurar la cookie en el arranque
+			
 			try {
 				response.getWriter().append("{ \"redirectURI\": \"").append(redirectUri).append("\" }");
 			} catch (IOException e) {
